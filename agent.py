@@ -51,7 +51,10 @@ def query_agent(agent, query):
             
             If the query requires creating a line chart, reply as follows:
             {"line": {"columns": ["A", "B", "C", ...], "data": [25, 24, 10, ...]}}
-                              
+
+            If user asking a question that requires neither, reply as follows:
+            {"answer": "answer"}
+            
             Return all output as a string.
                                                 
             Query: 
