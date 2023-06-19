@@ -3,15 +3,13 @@ import os
 from langchain.llms import OpenAI
 import pandas as pd
 from langchain.agents import create_pandas_dataframe_agent
+from dotenv import load_dotenv, find_dotenv
 
-def main():
-    load_dotenv()
+load_dotenv(find_dotenv())
 
-    if os.getenv("OPENAI_API_KEY") is None or os.getenv("OPENAI_API_KEY") == "":
-        print("OPENAI_API_KEY is not set")
-        exit(1)
-    else:
-        print("OPENAI_API_KEY is set")
+API_KEY = os.environ.get('OPENAI_API_KEY')
+
+
 
 def create_agent(df:str):
     """
@@ -24,7 +22,7 @@ def create_agent(df:str):
         An agent that can access and use the LLM.
     """
 
-    llm = OpenAI(openai_api_key="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")
+    llm = OpenAI(openai_api_key=API_KEY)
 
     df = pd.read_csv("./Transactions.csv")
     agent = create_pandas_dataframe_agent(llm, df ,verbose=True)
