@@ -54,7 +54,10 @@ def query_agent(agent, query):
 
             If user asking a question that requires neither, reply as follows:
             {"answer": "answer"}
-            
+
+            All strings in "columns" list and data list, should be in double quotes,
+
+            For example: {"columns": ["date", "categories"], "data": [["A", 361], ["B", 5164]]}
             Return all output as a string.
                                                 
             Query: 
