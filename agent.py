@@ -57,7 +57,7 @@ def query_agent(agent, query):
 
             All strings in "columns" list and data list, should be in double quotes,
 
-            For example: {"columns": ["date", "categories"], "data": [["A", 361], ["B", 5164]]}
+            For example: {"columns": ["date", "categories"], "data": [["04/01/2022", "A"], ["15/01/2022", "B"]]}
             Return all output as a string.
                                                 
             Query: 
